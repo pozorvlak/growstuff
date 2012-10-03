@@ -4,6 +4,8 @@ gem 'bundler', '>=1.1.5'
 
 gem 'rails', '3.2.8'
 
+gem 'thin' # faster webserver than the default
+
 gem 'haml'
 
 # Bundle edge Rails instead:
