@@ -58,6 +58,10 @@ gem 'cape'
 
 gem 'diff-lcs'
 
+group :development do
+  gem 'thin'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'webrat'
