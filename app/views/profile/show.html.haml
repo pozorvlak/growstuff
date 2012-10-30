@@ -2,3 +2,9 @@
 
 %p
   = "A Growstuff user since #{@user.created_at.strftime("%B %d, %Y")}."
+
+%p
+  - if @user.last_sign_in_at.nil?
+    Has yet to sign in.
+  - else
+    = "Last signed in at #{@user.last_sign_in_at}."

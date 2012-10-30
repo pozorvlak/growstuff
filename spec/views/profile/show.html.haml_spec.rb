@@ -15,4 +15,20 @@ describe "profile/show" do
     rendered.should contain "A Growstuff user since"
   end
 
+  context "never logged in" do
+    it "says they've never logged in if they haven't" do
+      render
+      rendered.should contain "yet to sign in"
+    end
+  end
+
+  context "logged in" do
+    it "shows the date of last login" do
+      @user.confirm!
+      sign_in @user
+      render
+      rendered.should contain "Last signed in at"
+    end
+  end
+
 end
