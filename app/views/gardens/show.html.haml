@@ -27,5 +27,5 @@
 
     %h3 What's planted here?
     - @garden.plantings.each do |p|
-      = render :partial => "plantings/thumbnail", :locals => { :planting => p }
+      = render :partial => "plantings/single", :locals => { :planting => p }
 
