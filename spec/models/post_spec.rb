@@ -43,9 +43,19 @@ describe Post do
     @post.forum.should be_an_instance_of Forum
   end
 
-  it "doesn't allow a blank subject" do
+  it "doesn't allow a nil subject" do
     @post = FactoryGirl.build(:post, :subject => nil)
     expect { @post.save }.to raise_error ActiveRecord::StatementInvalid
+  end
+
+  it "doesn't allow a blank subject" do
+    @post = FactoryGirl.build(:post, :subject => "")
+    expect { @post.save }.to raise_error
+  end
+  
+  it "doesn't allow a subject with only spaces" do
+    @post = FactoryGirl.build(:post, :subject => "    ")
+    expect { @post.save }.to raise_error
   end
 
   context "recent activity" do
