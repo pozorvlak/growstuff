@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130329045744) do
+ActiveRecord::Schema.define(:version => 20130409103549) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id",    :null => false
@@ -82,6 +82,11 @@ ActiveRecord::Schema.define(:version => 20130329045744) do
     t.string   "location"
     t.float    "latitude"
     t.float    "longitude"
+    t.text     "about_me"
+    t.string   "full_name"
+    t.string   "gardening_since"
+    t.string   "wish_i_could_grow"
+    t.string   "gardening_clothes"
     t.boolean  "send_notification_email", :default => true
   end
 
