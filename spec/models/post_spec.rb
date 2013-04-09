@@ -45,17 +45,16 @@ describe Post do
 
   it "doesn't allow a nil subject" do
     @post = FactoryGirl.build(:post, :subject => nil)
-    expect { @post.save }.to raise_error ActiveRecord::StatementInvalid
+    @post.should_not be_valid
   end
 
   it "doesn't allow a blank subject" do
     @post = FactoryGirl.build(:post, :subject => "")
-    expect { @post.save }.to raise_error
+    @post.should_not be_valid
   end
   
   it "doesn't allow a subject with only spaces" do
     @post = FactoryGirl.build(:post, :subject => "    ")
-    expect { @post.save }.to raise_error
   end
 
   context "recent activity" do
