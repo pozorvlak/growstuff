@@ -34,6 +34,11 @@ class install_postgres {
     require  => Class['postgresql::server']
   }
 
+  pg_user { 'rails':
+    ensure  => present,
+    require => Class['postgresql::server']
+  }
+
   pg_user { 'vagrant':
     ensure    => present,
     superuser => true,

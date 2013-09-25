@@ -2,13 +2,11 @@ development:
   adapter: postgresql
   database: development
   username: vagrant
-  host: localhost
 
 test:
   adapter: postgresql
   database: test
   username: vagrant
-  host: localhost
 
 # should be identical to test apart from running on postgres
 # NOTE: this can probably be dispensed with once we're developing
