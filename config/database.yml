@@ -6,6 +6,7 @@ development:
 test:
   adapter: postgresql
   database: test
+  template: template0
   username: vagrant
 
 # should be identical to test apart from running on postgres
