@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119130555) do
+ActiveRecord::Schema.define(version: 20150128220038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(version: 20141119130555) do
     t.decimal  "weight_quantity"
     t.string   "weight_unit"
     t.integer  "plant_part_id"
+    t.float    "si_weight"
   end
 
   create_table "harvests_photos", id: false, force: true do |t|
