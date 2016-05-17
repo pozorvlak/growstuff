@@ -10,6 +10,7 @@ test:
   database: growstuff_test
   host: localhost
   user: postgres
+  password: password
 
 production:
   adapter: postgresql
