@@ -1,4 +1,8 @@
 sudo: required
+branches:
+  only:
+    - staging
+    - trying
 language: ruby
 cache:
   bundler: true
