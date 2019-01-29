@@ -1,9 +1,16 @@
-development:
+docker: &docker
   adapter: postgresql
+  pool: 5
+  host: db
+  username: postgres
+  password:
+
+development:
+  <<: *docker
   database: growstuff_dev
 
 test:
-  adapter: postgresql
+  <<: *docker
   database: growstuff_test
 
 production:

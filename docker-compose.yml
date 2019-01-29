@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/growstuff
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - elasticsearch
+    environment:
+      - GROWSTUFF_SITE_NAME=Growstuff (dev)
+      - GROWSTUFF_EMAIL='noreply@dev.growstuff.org'
+      - GROWSTUFF_ELASTICSEARCH=true
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  elasticsearch:
+    image: elasticsearch:6.5.4
+    ports:
+      - "9200:9200"
+
