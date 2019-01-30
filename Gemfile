@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 
 ruby '2.6.0'
 
+gem 'parser', '~>2.6.0'
+
 gem 'rails', '5.2.2'
 
 gem 'bundler', '>=1.1.5'
